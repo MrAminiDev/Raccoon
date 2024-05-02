@@ -1,4 +1,4 @@
-<div align="center"><img src="https://raw.githubusercontent.com/MrAminiNezhad/Raccoon/main/demo/logo.png" width="350"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/MrAminiDev/Raccoon/main/demo/logo.png" width="350"></div>
 <div align="center">
 برای توضیحات <a href="https://github.com/MrAminiNezhad/Raccoon/blob/main/README-fa.md"> فارسی اینجا بزنید </a>
 </div>
@@ -65,8 +65,8 @@ To install on the server with the help of aapanel by the dear team <a href="http
 
 # Preview
 
-<div align="center"><img src="https://raw.githubusercontent.com/MrAminiNezhad/Raccoon/main/demo/Raccoon_demo (1).png" width="700"></div>
-<div align="center"><img src="https://raw.githubusercontent.com/MrAminiNezhad/Raccoon/main/demo/Raccoon_demo (2).png" width="700"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/MrAminiDev/Raccoon/main/demo/Raccoon_demo (1).png" width="700"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/MrAminiDev/Raccoon/main/demo/Raccoon_demo (2).png" width="700"></div>
 
 # Thanks To
 
