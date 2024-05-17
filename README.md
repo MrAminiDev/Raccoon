@@ -1,6 +1,6 @@
 <div align="center"><img src="https://raw.githubusercontent.com/MrAminiDev/Raccoon/main/demo/logo.png" width="350"></div>
 <div align="center">
-برای توضیحات <a href="https://github.com/MrAminiNezhad/Raccoon/blob/main/README-fa.md"> فارسی اینجا بزنید </a>
+برای توضیحات <a href="https://github.com/MrAminiDev/Raccoon/blob/main/README-fa.md"> فارسی اینجا بزنید </a>
 </div>
 <br><br>
 
