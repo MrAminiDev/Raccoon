@@ -122,13 +122,14 @@ function update_users()
                     $total = $user['total'] / (1024 * 1024);
                     $up = $user['up'] / (1024 * 1024);
                     $down = $user['down'] / (1024 * 1024);
-
+                    $id = $user['id'];
+                    $email = $user['email'];
 
                     $expire_time = $user['expiryTime'] == 0  ? 0 : date('Y-m-d H:i:s', $user['expiryTime'] / 1000);
 
 
                     $db->insert('user', [
-
+                        'username' => $email ?? null,
                         'uuid' => $id ?? null,
                         'status' => $user['enable'],
                         'total_traffic' => $total,
