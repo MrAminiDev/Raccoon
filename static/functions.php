@@ -181,10 +181,9 @@ function client_info($username = null, $uuid = null)
         die;
     }
 
-
-
-
-    $config_status = $info['status'] == true ? 'فعال 🟢' : 'غیر فعال 🔴';
+    $selected_language = isset($_SESSION['selected_language']) ? $_SESSION['selected_language'] : 'fa';
+    $lang = $selected_language == 'en' ? require './lang/en.php' : require './lang/fa.php';
+    $config_status = $info['status'] == true ? $lang['statusactive'] : $lang['statusdeactive'];
 
     if ($info['total_traffic'] ==  0) {
         $total = "♾️";
