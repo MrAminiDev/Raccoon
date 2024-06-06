@@ -27,7 +27,7 @@ function get_uuid() {
     uuid = JSON.parse(atob(config.replace("vmess://", ""))).id;
   } else {
     window.location.href =
-      window.location.href + "search.php?username=" + config;
+      window.location.pathname + "search.php?username=" + config;
   }
-  window.location.href = window.location.href + "search.php?uuid=" + uuid;
+  window.location.href = window.location.pathname + "search.php?uuid=" + uuid;
 }
