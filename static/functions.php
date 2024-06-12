@@ -112,21 +112,16 @@ function update_users()
             }
         } else {
 
-
             foreach ($response['obj'] as $inbound) {
-
-
 
                 foreach ($inbound["clientStats"] as $user) {
 
                     $total = $user['total'] / (1024 * 1024);
                     $up = $user['up'] / (1024 * 1024);
                     $down = $user['down'] / (1024 * 1024);
-                    $id = $user['id'];
                     $email = $user['email'];
-
+                    $id = getUUID($email, $inbound);
                     $expire_time = $user['expiryTime'] == 0  ? 0 : date('Y-m-d H:i:s', $user['expiryTime'] / 1000);
-
 
                     $db->insert('user', [
                         'username' => $email ?? null,
@@ -139,6 +134,16 @@ function update_users()
                     ]);
                 }
             }
+        }
+    }
+}
+
+function getUUID($mail, $inbound)
+{
+    $settings = json_decode($inbound['settings']);
+    foreach ($settings->clients as $user) {
+        if ($user->email == $mail) {
+            return $user->id;
         }
     }
 }
