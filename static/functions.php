@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$max_requests = 10;
+$max_requests = 100;
 $time_interval = 60;
 $ban_duration = 20 * 60;
 
@@ -54,6 +54,9 @@ function run_login_script($panel, $cookie_file)
 function update_users()
 {
     global $db, $panels;
+
+
+
 
     $db->delete('user', []);
     $db->delete('data_time', []);
@@ -112,19 +115,31 @@ function update_users()
             }
         } else {
 
+
             foreach ($response['obj'] as $inbound) {
+
+
 
                 foreach ($inbound["clientStats"] as $user) {
 
                     $total = $user['total'] / (1024 * 1024);
                     $up = $user['up'] / (1024 * 1024);
                     $down = $user['down'] / (1024 * 1024);
-                    $email = $user['email'];
-                    $id = getUUID($email, $inbound);
+
+
                     $expire_time = $user['expiryTime'] == 0  ? 0 : date('Y-m-d H:i:s', $user['expiryTime'] / 1000);
 
+
+
+                    foreach (json_decode($inbound['settings'], true)['clients'] as $user_conf) {
+                        if ($user_conf['email'] == $user['email']) {
+                            $id = $user_conf['id'];
+                            break;
+                        }
+                    }
+
                     $db->insert('user', [
-                        'username' => $email ?? null,
+                        'username' => strtolower($user['email']),
                         'uuid' => $id ?? null,
                         'status' => $user['enable'],
                         'total_traffic' => $total,
@@ -134,16 +149,6 @@ function update_users()
                     ]);
                 }
             }
-        }
-    }
-}
-
-function getUUID($mail, $inbound)
-{
-    $settings = json_decode($inbound['settings']);
-    foreach ($settings->clients as $user) {
-        if ($user->email == $mail) {
-            return $user->id;
         }
     }
 }
@@ -186,9 +191,10 @@ function client_info($username = null, $uuid = null)
         die;
     }
 
-    $selected_language = isset($_SESSION['selected_language']) ? $_SESSION['selected_language'] : 'fa';
-    $lang = $selected_language == 'en' ? require './lang/en.php' : require './lang/fa.php';
-    $config_status = $info['status'] == true ? $lang['statusactive'] : $lang['statusdeactive'];
+
+
+
+    $config_status = $info['status'] == true ? 'فعال 🟢' : 'غیر فعال 🔴';
 
     if ($info['total_traffic'] ==  0) {
         $total = "♾️";

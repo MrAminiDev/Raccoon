@@ -11,6 +11,8 @@ $lang = $selected_language == 'en' ? require './lang/en.php' : require './lang/f
 if (strlen($crisp) >= 20) $crisp_script = "<script type='text/javascript'>window.\$crisp=[];window.CRISP_WEBSITE_ID='{$crisp}';(function(){d=document;s=d.createElement('script');s.src='https://client.crisp.chat/l.js';s.async=1;d.getElementsByTagName('head')[0].appendChild(s);})();</script>";
 if (strlen($goftino) >= 3) $goftino_script ="<script type='text/javascript'> !function(){var i='{$goftino}',d=document,g=d.createElement('script'),s='https://www.goftino.com/widget/'+i,l=localStorage.getItem('goftino_'+i);g.type='text/javascript',g.async=!0,g.src=l?s+'?o='+l:s;d.getElementsByTagName('head')[0].appendChild(g);}(); </script>";
 if (strlen($raychat) >= 5) $raychat_script ="<script type='text/javascript'>   window.RAYCHAT_TOKEN = '$raychat';     (function () {       d = document;       s = d.createElement('script');       s.src = 'https://widget-react.raychat.io/install/widget.js';       s.async = 1;       d.getElementsByTagName('head')[0].appendChild(s);     })(); </script>";
+
+  
 ?>
 <html>
 
@@ -67,13 +69,15 @@ if (strlen($raychat) >= 5) $raychat_script ="<script type='text/javascript'>   w
             <a href="?lang=fa">🇮🇷</a>
             <a href="?lang=en">🇺🇸</a>
           </p>
-          <p class="text-size-16 mb-0">Coded By <a href="https://github.com/MrAminiNezhad">MrAminiNezhad</a> © 2023 - <script>document.write(new Date().getFullYear())</script>. All Rights Reserved.</p>
+          <p class="text-size-16 mb-0">Coded By <a href="https://github.com/MrAminiNezhad">MrAminiNezhad</a> © 2023. All Rights Reserved.</p>
         </div>
       </div>
     </div>
   </div>
   <script src="assets/js/index.js"></script>
   <?php echo $crisp_script ?? null; ?>
+  <?php echo $goftino_script ?? null; ?>
+  <?php echo $raychat_script ?? null; ?>
 </body>
 
 </html>

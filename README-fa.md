@@ -1,4 +1,4 @@
-<div align="center"><img src="https://raw.githubusercontent.com/MrAminiDev/Raccoon/main/demo/logo.png" width="350"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/MrAminiNezhad/Raccoon/main/demo/logo.png" width="350"></div>
 
 # اسکریپت راکون چیست ؟
 
@@ -60,8 +60,8 @@ $HTTP["url"] =~ "^/(.db.db|.cookie.txt)$" {
 
 # پیش نمایش
 
-<div align="center"><img src="https://raw.githubusercontent.com/MrAminiDev/Raccoon/main/demo/Raccoon_demo (1).png" width="700"></div>
-<div align="center"><img src="https://raw.githubusercontent.com/MrAminiDev/Raccoon/main/demo/Raccoon_demo (2).png" width="700"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/MrAminiNezhad/Raccoon/main/demo/Raccoon_demo (1).png" width="700"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/MrAminiNezhad/Raccoon/main/demo/Raccoon_demo (2).png" width="700"></div>
 
 # با تشکر از
 
